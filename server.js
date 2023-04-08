@@ -18,7 +18,6 @@ app
         createProxyMiddleware({
             target: 'http://localhost:8000',
             changeOrigin:true,
-        
         })
         );
     }
@@ -36,6 +35,5 @@ app
 })
 .catch(err => {
     console.log("Error",err);
-
 
 })

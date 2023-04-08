@@ -16,7 +16,6 @@ const Register =()=>{
     
     const[loading, setLoading]= useState(false);
     
-    console.log('TESTSING ENV',process.env.NEXT_PUBLIC_API);
     /* presentación del formulario*/
     
     const handleSubmit= async(e) =>{
@@ -24,8 +23,7 @@ const Register =()=>{
         //console.table({name,secondName,lastName,secondLastName,email,password,option})
         try{
             setLoading(true);
-            const { data } = await axios.post(
-            `/api/register`, {
+            const { data } = await axios.post(`/api/register`, {
             name,lastName,email,password
         });
         //console.log("REGISTER RESPONSE", data)
@@ -132,7 +130,7 @@ const Register =()=>{
                         </div>
                     </div>
                     <div className="col-lg-6">
-                        <div className="user-img"> 
+                        <div className="user-img mt-5 mt-md-10"> 
                             <img className="user"
                             src="images/education/register.jpg"/>
                         </div>

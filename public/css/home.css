@@ -1,0 +1,126 @@
+/*HOME PAGE*/
+
+.banner-area-ptb {
+    padding-top: 140px;
+    padding-bottom: 190px;
+}
+  
+.banner-area {
+    background-color: #F5F5F5;
+    z-index: 1;
+    position: relative;
+}
+  
+.aos-animate {
+    transition-delay: .9s;
+    opacity: 1;
+    transform: translateZ(0);
+}
+
+.banner-content span {
+    font-size: 32px;
+    color: var(--ColorSecundario);
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.banner-content h1 {
+    font-size: 60px;
+    color: var(--ColorPrimario);
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.banner-img-two {
+    float: left;
+    margin-left: 70px;
+    margin-right: unset;
+}
+
+.banner-img-two img {
+    min-width: 200px;
+    width: 300px;
+    max-width: 600px;
+    animation: movebounce 5s linear infinite;
+}
+
+.featured-area-mt {
+    position: relative;
+    margin-top: -50px;
+    z-index: 2;
+}
+
+.featured-item {
+    background-color: var(--whiteColor);
+    box-shadow: 0 0 15px rgb(0 0 0 / 6%);
+    padding: 35px 35px 35px 110px;
+    position: relative;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+
+
+.featured-item i {
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    width: 55px;
+    height: 55px;
+    line-height: 60px;
+    color: var(--ColorPrimario);
+    background: rgba(233, 132, 130, 0.1);
+    font-size: 25px;
+    border: 1px dashed var(--ColorPrimario);
+    display: inline-block;
+    text-align: center;
+    border-radius: 50px;
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
+}
+
+.categories-area {
+    position: relative;
+}
+
+
+.section-title h2 {
+    font-size: 35px;
+    margin-top: 0;
+    line-height: 1.2;
+    margin-bottom: 0;
+    font-weight: 700;
+    color: var(--ColorPrimario);
+}
+
+.section-title h2 b {
+    color: var(--ColorSecundario);
+    font-weight: 700;
+}
+
+@keyframes movebounce {
+
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+    
+    100% {
+        transform: translateY(0);
+    }
+}
+
+[data-aos][data-aos][data-aos-easing=ease], body[data-aos-easing=ease] [data-aos] {
+    transition-timing-function: ease;
+}
+
+
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+.banner-content h1 {
+    font-size: 40px;
+}
+}
