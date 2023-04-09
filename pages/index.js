@@ -1,54 +1,51 @@
 //<div className=""></div>
 
+
 import {
     FilePdfOutlined,
     FundProjectionScreenOutlined,
-    FormOutlined
+    FormOutlined,
+    BookOutlined
 } from "@ant-design/icons";
+
 
 const Index = ()=>{
     return(
         <>
             <div className="index">
-                <div className="banner-area banner-area-ptb">
-                    <div className="container-fluid">
-                        <div className="row aling-items-center">
-                            <div className="col-lg-6">
-                                <div className="banner-content">
-                                    <span data-aos="fade-up" 
-                                    data-aos-delay="900" 
-                                    data-aos-duration="1000" 
-                                    data-aps-once="true" 
-                                    className="aos-init aos-animate">
-                                    Bienvenid@s a Klass
-                                    </span>
-                                    <h1 data-aos="fade-down" 
-                                    data-aos-delay="900" 
-                                    data-aos-duration="1000" 
-                                    data-aos-once="true" 
-                                    class="aos-init aos-animate">
-                                    Educación Virtual a tu alcance
-                                    </h1>
-                                    <p data-aos="fade-up" 
-                                    data-aos-delay="900" 
-                                    data-aos-duration="1000" 
-                                    data-aos-once="true" 
-                                    class="aos-init aos-animate">
-                                    Diseñamos cursos y proyectos de cero, con el apoyo y acompañamiento de los mejores profesionales.
-                                    </p>
+                <div className="portada container-fluid p-0">
+                    <section className="cover">
+                        <img src="images/home/mobile-book.svg" id="klass" className="d-none d-md-block" alt="LogoKlass"/> 
+                        <img src="images/home/wave2.svg" id="wave" alt="LogoKlass"/>  
+                          <div className="nomargin container-fluid">
+                            <div className="nomargin row w-100">
+                                <div class="col-md-4 col-lg-5"></div>
+                                    <div class="col-md-8 col-lg-7">
+                                        <h1 id="text">KLASS</h1>
+                                        <h2 id="text2">El lugar donde brindamos una experiencia de aprendizaje virtual.</h2>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="col-lg-6">
-                                <div class="banner-img-two aos-init aos-animate" data-aos="fade-up" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">
-                                    <img src="images/LogoKlass.png" alt="Man"/> 
-                                </div>
-                                
-                            </div>
+                    </section>
+                    
+                    
+                </div>
+                <section className="about container-fluid">
+                    <div className="nomargin row aling-items-center px-5 gx-5">
+                        <div className="col-lg-6  col-sm-12 text-end">
+                            <h1>Educación virtual</h1>
+                            <h2> a tu alcance</h2>
+                        </div>
+                        <div className="col p-0 vl d-none d-md-block"></div>
+                        <div className="col-lg-4  col-sm-12 text-start">
+                            <p className=" text m-0">
+                                Diseñamos cursos y proyectos de cero, con el apoyo y acompañamiento de los mejores profesionales.
+                            </p>
                         </div>
                     
                     </div>
                 
-                </div>
+                </section>
                 <div className="featured-area featured-area-mt pb-70">
                     <div className="container">
                         <div className="row justify-content-center">
@@ -70,20 +67,38 @@ const Index = ()=>{
                                 <h3>Actividades y evaluaciones de conocimientos</h3>
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
                 </div> 
-                <div className="categories-area pb-70 mb-35">
-                    <div className="container">
-                        <div className="section-title mb-45 ">
-                            <h2>
-                                Nuestros <b> Servicios</b>
-                            </h2>
-                        </div>
-                    </div>
                 
-                </div>
+    
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            
+            
             </div>
         </>
     );

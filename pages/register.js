@@ -26,7 +26,7 @@ const Register =()=>{
             const { data } = await axios.post(`/api/register`, {
             name,lastName,email,password
         });
-        //console.log("REGISTER RESPONSE", data)
+        console.log("REGISTER RESPONSE", data)
         toast.success('Registro Exitoso. Por favor Inicia Sesión.')
         setLoading(false);
         } catch (err){
@@ -136,7 +136,6 @@ const Register =()=>{
                         </div>
                     </div>
                 </div>
-            
             </div>
         </>
     );

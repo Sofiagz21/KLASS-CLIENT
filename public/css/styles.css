@@ -10,6 +10,18 @@
     src: url('../fonts/MADE\ TOMMY\ Thin_PERSONAL\ USE.otf');
 }
 
+@font-face {
+  font-family: 'MadeTommyHomme';
+  src: url('../fonts/MADE\ TOMMY\ ExtraBold_PERSONAL\ USE.otf');
+}
+
+@font-face {
+  font-family: 'MadeTommyOutline';
+  src: url('../fonts/MADE\ TOMMY\ Bold\ Outline_PERSONAL\ USE.otf');
+}
+
+
+
 :root{
     --ColorTexto:#071A19;
     --ColorPrimario:#BF2315;
