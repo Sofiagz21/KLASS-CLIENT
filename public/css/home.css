@@ -69,6 +69,7 @@
 
 .text-end {
     text-align: right!important;
+    
 }
 
 .text-start {
@@ -88,7 +89,7 @@
 }
 
 .about h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
     line-height: 0.9;
     margin-right: 10px;
@@ -97,7 +98,7 @@
 }
 
 .about h2 {
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: bold;
     line-height: 0.9;
     margin-right: 10px;
@@ -213,6 +214,43 @@
     border-radius: 10px;
 }
 
+.textslider .slide-track {
+    animation: textscroll 40s linear infinite;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1000px;
+}
+
+@media (max-width: 768px) {
+    .textslider .slide-track {
+        max-width: 420px;
+    }
+}
+
+@media (max-width: 480px) {
+    .textslider .slide-track {
+        max-width: 200px;
+    }
+}
+  
+  .textslider h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 0.9;
+    margin-right: 10px;
+    font-family: 'MadeTommyHomme';
+    color: #FEFEE3;
+}
+
+.textslider h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 0.9;
+    margin-right: 10px;
+    font-family: 'MadeTommyOutline';
+    color: #FEFEE3;
+}
 @media only screen and (max-width: 767px){
     .featured-area-mt {
      padding-top: 50px;
@@ -227,12 +265,83 @@
 
 .nomargin{
     bottom: 10px;
+}
+}
 
+
+.animated-shape{
+    position: relative;
+    z-index: 9;
 }
 
 
 
+.about-image-gallery {
+    position: relative;
+    z-index: 1;
 }
+
+.about-image-gallery img {
+    border-radius: 265px 265px 5px 5px;
+}
+
+@media only screen and (max-width: 767px){
+    .about-image-gallery img {
+        border-radius: 500px 500px 0 0;
+}
+}
+
+.about-image-gallery:after {
+    border: 5px solid #FEFEE3;
+    border-radius: 265px 265px 5px 5px;
+    bottom: -20px;
+    content: "";
+    height: 95%;
+    left: 40px;
+    position: absolute;
+    width: 97%;
+    z-index: -1;
+}
+
+.section-title .pre-title {
+    color: #FEFEE3;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 2rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+    line-height: 26px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.titlee{
+    color: #fcfcf6;
+    font-size: 40px;
+    margin-bottom: 0;
+    margin-top: 3rem;
+    font-weight: bold;
+}
+
+.line-before {
+    padding-left: 18px;
+    position: relative;
+    color: #fcfcf6;
+    margin-top: 3rem;
+    font-size: 1.8rem;
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+.inner {
+    padding-left: 40px;
+}
+}
+
 
 @media only screen and (max-width: 767px){
 .featured-item i {
@@ -240,8 +349,6 @@
     left: auto;
 }
 }
-
-
 
 @media only screen and (max-width: 767px){
     .featured-item {
@@ -271,4 +378,77 @@
 .banner-content h1 {
     font-size: 40px;
 }
+}
+
+.fadeInLeft{
+    visibility: visible;
+    animation-duration: 1.5s;
+    animation-name: fadeInLeft;
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.tf_about_2_img{
+    position: relative;
+    text-align: center
+}
+
+.tf_about_2_img .tf_about_small{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 10px solid #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+@media (min-width: 576px) and (max-width: 767.99px){
+.tf_about_2_img .tf_about_small {
+    width: 130px;
+    height: 130px;
+    border: 7px solid #fff;
+}
+}
+
+.tf_about_2_img .tf_about_large img {
+    border-radius: 70%;
+}
+
+.tf_about_2_img .tf_about_large::after {
+    position: absolute;
+    content: "";
+    background: url(../images/home/about_2_shape.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 500px;
+    height: 500px;
+    top: 0;
+    right: 90px;
+    z-index: -1;
+    opacity: .3;
+    animation: about_animi linear 2s infinite alternate;
+    
+}
+
+@keyframes about_animi {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.3);
+    }
 }

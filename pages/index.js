@@ -1,6 +1,5 @@
 //<div className=""></div>
 
-
 import {
     FilePdfOutlined,
     FundProjectionScreenOutlined,
@@ -27,8 +26,6 @@ const Index = ()=>{
                                 </div>
                             </div>
                     </section>
-                    
-                    
                 </div>
                 <section className="about container-fluid">
                     <div className="nomargin row aling-items-center px-5 gx-5">
@@ -42,7 +39,6 @@ const Index = ()=>{
                                 Diseñamos cursos y proyectos de cero, con el apoyo y acompañamiento de los mejores profesionales.
                             </p>
                         </div>
-                    
                     </div>
                 
                 </section>
@@ -70,6 +66,36 @@ const Index = ()=>{
                         </div>
                     </div>
                 </div> 
+                <section className="services container-fluid ">
+                    <div className="about">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-xl-6 col-lg-6 wow fadeInLeft">
+                                    <div className="tf_about_2_img">
+                                        <div className="tf_about_small">
+                                            <img className="img-fluid w-100" src="images/home/about1.jpg"></img>
+                                        </div>
+                                        <div className="tf_about_large">
+                                            <img className="img-fluid w-100" src="images/home/about2.jpg"></img>
+                                        </div>
+                                    
+                                    
+                                    </div>
+                                
+                                
+                                </div>
+                            
+                            </div>
+                        
+                        
+                        </div>
+                    </div>
+                
+                
+                
+                
+                
+                </section>
                 
     
                 

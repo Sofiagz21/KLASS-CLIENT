@@ -148,6 +148,8 @@
 }
 
 
+
+
 @keyframes border-transform{
   0%, 100% {
     border-radius: 60% 40% 56% 33% / 73% 82% 18% 27%;
@@ -175,6 +177,19 @@
   84% {
     border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%;
   }
+}
+
+
+
+@keyframes textscroll {
+
+0% {
+    transform: translateX(0);
+}
+100% {
+    transform: translateX(calc(-250px * 7));
+
+}
 }
 
 
