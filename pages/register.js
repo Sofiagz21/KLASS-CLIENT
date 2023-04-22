@@ -9,10 +9,10 @@ import Link from 'next/link';
 
 const Register =()=>{
     /*se declaran los estados de los campos de entrada*/
-    const [name,setName]= useState("Diana");
-    const [lastName,setLastName]= useState("Londoño");
-    const [email,setEmail]= useState("diana@gmail.com");
-    const [password,setPassword]= useState("12345678");
+    const [name,setName]= useState("");
+    const [lastName,setLastName]= useState("");
+    const [email,setEmail]= useState("");
+    const [password,setPassword]= useState("");
     
     const[loading, setLoading]= useState(false);
     

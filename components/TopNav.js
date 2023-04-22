@@ -26,7 +26,14 @@ const TopNav=()=>{
                     <a>app</a>
                 </Link>
             </Item>
-            
+            <Item 
+                key="/courses"
+                onClick={(e) => setCurrent(e.key)}
+                icon={<AppstoreOutlined/>}>
+                <Link href="/courses" legacyBehavior>
+                    <a>Courses</a>
+                </Link>
+            </Item>
             <Item 
                 key="/login"
                 onClick={(e) => setCurrent(e.key)}

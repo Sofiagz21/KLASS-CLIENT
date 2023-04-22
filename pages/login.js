@@ -6,16 +6,20 @@ import {toast} from 'react-toastify'
 import { SyncOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 import { Context } from "../context";
+import { useRouter } from "next/router";
 
 
 const Login =()=>{
     /*se declaran los estados de los campos de entrada*/
-    const [email,setEmail]= useState("diana@gmail.com");
-    const [password,setPassword]= useState("12345678");
+    const [email,setEmail]= useState("");
+    const [password,setPassword]= useState("");
     const[loading, setLoading]= useState(false);
     
     // state
     const { state, dispatch } = useContext(Context);
+
+    //router
+    const router = useRouter();
         
     /* presentación del formulario*/
     
@@ -34,6 +38,10 @@ const Login =()=>{
             
         
         })
+        //save in local storage
+        window.localStorage.setItem("user", JSON.stringify(data));
+        //redirect
+        router.push("/courses")
         //setLoading(false);
         } catch (err){
             toast.error(err.response.data);
