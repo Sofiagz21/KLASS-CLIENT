@@ -1,5 +1,5 @@
 /*PAGINA regiter*/
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect} from "react";
 import Wave from "../components/Wave"; // Wave
 import axios from 'axios'
 import {toast} from 'react-toastify'
@@ -16,10 +16,17 @@ const Login =()=>{
     const[loading, setLoading]= useState(false);
     
     // state
-    const { state, dispatch } = useContext(Context);
+    const { state:{ user }, 
+    dispatch } = useContext(Context);
+    // const{user} =state
 
     //router
     const router = useRouter();
+    
+    // protección de paginas
+    useEffect(()=>{
+        if(user!== null) router.push("/courses "); //"/"
+    },[user]);
         
     /* presentación del formulario*/
     

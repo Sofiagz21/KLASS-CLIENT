@@ -41,10 +41,8 @@ const TopNav=()=>{
     
     return(
         <Menu mode="horizontal" selectedKeys={[current]}>
-             
             {user=== null && (
             <>
-            
                 <Item 
                     key="/"
                     onClick={(e) => setCurrent(e.key)}

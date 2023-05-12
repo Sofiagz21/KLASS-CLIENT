@@ -1,11 +1,12 @@
 /*PAGINA regiter*/
-import {useState} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import Wave from "../components/Wave"; // Wave
 import axios from 'axios'
 import {toast} from 'react-toastify'
 import { SyncOutlined } from '@ant-design/icons';
 import Link from 'next/link';
-
+import { Context } from "../context";
+import { useRouter } from 'next/router';
 
 const Register =()=>{
     /*se declaran los estados de los campos de entrada*/
@@ -15,6 +16,18 @@ const Register =()=>{
     const [password,setPassword]= useState("");
     
     const[loading, setLoading]= useState(false);
+    
+    
+    const {
+        state: {user},
+    } = useContext();
+    
+    const router=useRouter();
+    
+    // protección de paginas
+    useEffect(() => {
+        if(user !==null) router.push("/courses"); // "//"
+    },[user])
     
     /* presentación del formulario*/
     
