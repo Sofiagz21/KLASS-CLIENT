@@ -19,10 +19,10 @@ const Register =()=>{
     
     
     const {
-        state: {user},
-    } = useContext();
+        state: { user },
+      } = useContext(Context);
     
-    const router=useRouter();
+      const router = useRouter();
     
     // protección de paginas
     useEffect(() => {

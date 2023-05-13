@@ -14,7 +14,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 
-const { Item,SubMenu }=Menu; //Menu.Item
+const { Item,SubMenu, ItemGroup }=Menu; //Menu.Item
 
 const TopNav=()=>{
 
@@ -82,11 +82,20 @@ const TopNav=()=>{
                     </Link>
                 </Item>
                 <SubMenu icon={<CoffeeOutlined/>} title={user && user.name} className="float-right">
-                <Item 
-                    onClick={logout}
-                    icon={<LogoutOutlined/>} className="float-right">
-                    Cerrar Sesión
-                </Item> 
+                    <ItemGroup>
+                        <Item key="/user">
+                            <Link href="/user" legacyBehavior>
+                                <a>Dashboard</a>
+                            </Link>
+                        
+                        
+                        </Item>
+                        <Item 
+                            onClick={logout}
+                            icon={<LogoutOutlined/>}>
+                            Cerrar Sesión
+                        </Item> 
+                    </ItemGroup>
                 </SubMenu>
             </>
             )}

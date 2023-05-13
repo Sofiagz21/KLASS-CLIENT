@@ -25,36 +25,35 @@ const Login =()=>{
     
     // protección de paginas
     useEffect(()=>{
-        if(user!== null) router.push("/courses "); //"/"
+        if(user!== null) router.push("/courses"); //"/"
     },[user]);
         
     /* presentación del formulario*/
     
-    const handleSubmit= async(e) =>{
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        //console.table({name,secondName,lastName,secondLastName,email,password,option})
-        try{
-            setLoading(true);
-            const { data } = await axios.post(`/api/login`, {
-            email,password
-        });
-        //console.log("LOGIN RESPONSE", data)
-        dispatch({
-            type:"LOGIN",
-            payload:data,
-            
-        
-        })
-        //save in local storage
-        window.localStorage.setItem("user", JSON.stringify(data));
-        //redirect
-        router.push("/courses")
-        //setLoading(false);
-        } catch (err){
-            toast.error(err.response.data);
-            setLoading(false);
+        // console.table({ name, email, password });
+        try {
+          setLoading(true);
+          const { data } = await axios.post(`/api/login`, {
+            email,
+            password,
+          });
+          // console.log("LOGIN RESPONSE", data);
+          dispatch({
+            type: "LOGIN",
+            payload: data,
+          });
+          // save in local storage
+          window.localStorage.setItem("user", JSON.stringify(data));
+          // redirect
+          router.push("/courses");
+          // setLoading(false);
+        } catch (err) {
+          toast(err.response.data);
+          setLoading(false);
         }
-    };
+      };
         
     return(
         <>

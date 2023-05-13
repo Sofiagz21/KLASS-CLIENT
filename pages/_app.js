@@ -1,4 +1,4 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.css';
 import "antd/dist/antd.min.js";
 import "antd/dist/reset.css";
 import "../public/css/styles.css"
