@@ -115,6 +115,14 @@ const Login =()=>{
                                             <a>Registrarme</a>
                                         </Link>
                                     </p>
+                                    
+                                    <p className="sendLogin text-center p-3">
+                                        <Link href="/forgot-password" legacyBehavior>
+                                            <a>Olvide mi contraseña</a>
+                                        </Link>
+                                    </p>
+                                    
+                                    
                                 </div>      
                             </div>
                         </div>
