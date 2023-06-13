@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 const ForgotPassword = () => {
   // state
   const [email, setEmail] = useState("");
-  const [success, setSuccess] = useState("");
+  const [success, setSuccess] = useState(false);
   const [code, setCode] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -39,6 +39,34 @@ const ForgotPassword = () => {
       toast(err.response.data);
     }
   };
+  
+  const handleResetPassword= async (e)=>{
+    e.preventDefault();
+    //console.log(email,code,newPassword);
+    //return;
+    try{
+        setLoading(true);
+        const {data} = await axios.post('/api/reset-password', {
+            email,
+            code, 
+            newPassword,
+        });
+        setEmail("");
+        setCode("");
+        setNewPassword("");
+        setLoading(false);
+        toast('Contraseña renovada exitosamente')
+        
+    }catch (err){
+        setLoading(false);
+        toast(err.response.data);
+        
+    
+    }
+  
+  
+  
+  }
     
     return(
         <>
@@ -48,7 +76,7 @@ const ForgotPassword = () => {
             <div className="row aling-items-center justify-content-center">
                 <div className="col-lg-5">
                 <div className="container forgotPassword col-md-12 col-lg-12 pt-5">
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={ success ? handleResetPassword :handleSubmit} novalidate="true">
                     <div className="row">
                         <input 
                             type="email" 
@@ -58,7 +86,32 @@ const ForgotPassword = () => {
                             placeholder="Ingresa tu email"
                             required
                             />
-                        </div>
+                    </div>
+                    {success && 
+                    (<>
+                        <div className="row">
+                             <input 
+                                type="text" 
+                                className="form-control col-md-6 mb-4 p-3" 
+                                value={code} 
+                                onChange={e=> setCode(e.target.value)}
+                                placeholder="Ingresa el código de seguridad"
+                                required
+                            />
+                        </div> 
+                        <div className="row">
+                             <input 
+                                type="password" 
+                                className="form-control col-md-6 mb-4 p-3" 
+                                value={newPassword} 
+                                onChange={e=> setNewPassword(e.target.value)}
+                                placeholder="Nueva contraseña"
+                                required
+                            />
+                        </div> 
+                        
+                    </>
+                    )}
                     <div className="row">
                         <button className="btn btn-outline-danger crear btn-block p-2" disabled={loading || !email }>
                                 {loading ? <SyncOutlined spin/> : "Submit"}
