@@ -89,16 +89,6 @@
   transition: var(--transition);
 }
 
-.row {
-  --bs-gutter-x: 1.5rem;
-  --bs-gutter-y: 0;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: calc(-1 * var(--bs-gutter-y));
-  margin-left: calc(-.5 * var(--bs-gutter-x));
-  margin-right: calc(-.5 * var(--bs-gutter-x));
-}
-
  .form-group {
   margin-bottom: 20px;
   position: relative;
@@ -183,17 +173,7 @@
 }
 
 
-/* user*/
 
-
-.square {
-  border-radius: 0px;
-}
-
-.jumbotron {
-  background-image: linear-gradient(to right, #007bff, #000);
-  color: #fff;
-}
 
 
 

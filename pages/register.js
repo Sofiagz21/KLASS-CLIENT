@@ -50,7 +50,6 @@ const Register =()=>{
         
     return(
         <>
-            <Wave/>
             <div className="container">
                 <div className="row align-items-center justify-content-center">
                     <div className="col-lg-6">
@@ -71,7 +70,7 @@ const Register =()=>{
                                                         className="form-control col-md-6 mb-3" 
                                                         value={name}
                                                         onChange={(e)=> setName(e.target.value)} 
-                                                        placeholder="Primer nombre"
+                                                        placeholder="Nombre(s)"
                                                         autoComplete='off'
                                                         required
                                                         />
@@ -87,7 +86,7 @@ const Register =()=>{
                                                     value={lastName} 
                                                     onChange={(e)=> setLastName(e.target.value)} 
                                                     autoComplete='off'
-                                                    placeholder="Primer apellido"
+                                                    placeholder="Apellido(s)"
                                                     required
                                                     />
                                                     </div>

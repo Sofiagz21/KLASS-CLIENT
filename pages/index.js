@@ -4,7 +4,8 @@
 import {
     FilePdfOutlined,
     FundProjectionScreenOutlined,
-    BookOutlined
+    BookOutlined,
+    CaretRightOutlined 
 } from "@ant-design/icons";
 
 
@@ -112,7 +113,21 @@ const Index = ()=>{
                     
                     </div>
                 </section>
-   
+                <section className="play-area ptb-100">
+                    <div className="title text-center mb-45">
+                        <h2><span>Explora</span> miles de clases creativas.</h2>
+                    </div>
+                    <div className="container">
+                        <div className="play-btn-area">
+                            <a href="https://www.youtube.com/watch?v=Zd00oIDAt60" className="play-btn"> 
+                                <i className="flaticon-play-button-arrowhead">
+                                    <CaretRightOutlined />
+                                </i>
+                            
+                            </a>
+                        </div>
+                    </div>
+                </section>
             
            </div> 
         </>
