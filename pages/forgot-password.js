@@ -24,7 +24,7 @@ const ForgotPassword = () => {
   // redirect if user is logged in
   useEffect(() => {
     if (user !== null) router.push("/");
-  }, []);
+  }, [user]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -60,14 +60,9 @@ const ForgotPassword = () => {
     }catch (err){
         setLoading(false);
         toast(err.response.data);
-        
-    
     }
-  
-  
-  
   }
-    
+
     return(
         <>
             <h1 className="jumbotron text-center bg-primary square"> 
@@ -109,17 +104,13 @@ const ForgotPassword = () => {
                                 required
                             />
                         </div> 
-                        
                     </>
                     )}
                     <div className="row">
                         <button className="btn btn-outline-danger crear btn-block p-2" disabled={loading || !email }>
-                                {loading ? <SyncOutlined spin/> : "Submit"}
+                                {loading ? <SyncOutlined spin/> : "¡Listo!"}
                         </button>
-                    </div>
-                        
-                            
-                            
+                    </div>       
                     </form>
                 </div>
                 

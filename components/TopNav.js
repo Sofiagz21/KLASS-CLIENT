@@ -7,6 +7,8 @@ import {
   UserAddOutlined,
   LogoutOutlined,
   CoffeeOutlined,
+  CarryOutOutlined,
+  TeamOutlined,
 } from "@ant-design/icons";
 
 import { Context } from "../context";
@@ -35,12 +37,40 @@ const TopNav=()=>{
         window.localStorage.removeItem("user");
         const {data} = await axios.get("/api/logout");
         toast(data.message);
-        router.push("/login");
+        router.push("/");
     };
     
     
     return(
         <Menu mode="horizontal" selectedKeys={[current]}>
+        
+            {user && user.role && user.role.includes("Instructor") ? (
+                <Item 
+                key="/instructor/course/create"
+                onClick={(e) => setCurrent(e.key)}
+                icon={<CarryOutOutlined/>}
+                >
+                    <Link href="/instructor/course/create" legacyBehavior>
+                        <a>Crear curso</a>
+                    </Link>
+                </Item>
+            ):(
+                <Item 
+                key="/user/become-instructor"
+                onClick={(e) => setCurrent(e.key)}
+                icon={<TeamOutlined/>}
+                >
+                    <Link href="/user/become-instructor" legacyBehavior>
+                        <a>Convertirse en instructor</a>
+                    </Link>
+                </Item>
+            )}
+            
+            
+            
+            
+            
+            
             {user=== null && (
             <>
                 <Item 
@@ -48,7 +78,7 @@ const TopNav=()=>{
                     onClick={(e) => setCurrent(e.key)}
                     icon={<AppstoreOutlined/>}>
                     <Link href="/" legacyBehavior>
-                        <a>app</a>
+                        <a>App</a>
                     </Link>
                 </Item>
                 <Item 
@@ -56,16 +86,15 @@ const TopNav=()=>{
                     onClick={(e) => setCurrent(e.key)}
                     icon={<LoginOutlined/>}>
                     <Link href="/login" legacyBehavior>
-                        <a>Login</a>
+                        <a>Ingresar</a>
                     </Link>
                 </Item>
-            
                 <Item 
                     key="/register"
                     onClick={(e) => setCurrent(e.key)}
                     icon={<UserAddOutlined/>}>
                     <Link href="/register" legacyBehavior>
-                        <a>Register</a>
+                        <a>Registrarse</a>
                     </Link>
                 </Item>
             </>
@@ -73,22 +102,12 @@ const TopNav=()=>{
             
             {user !== null && (
             <>
-                <Item 
-                    key="/courses"
-                    onClick={(e) => setCurrent(e.key)}
-                    icon={<AppstoreOutlined/>}>
-                    <Link href="/courses" legacyBehavior>
-                        <a>Courses</a>
-                    </Link>
-                </Item>
                 <SubMenu icon={<CoffeeOutlined/>} title={user && user.name} className="float-right">
                     <ItemGroup>
                         <Item key="/user">
                             <Link href="/user" legacyBehavior>
                                 <a>Dashboard</a>
                             </Link>
-                        
-                        
                         </Item>
                         <Item 
                             onClick={logout}
@@ -99,8 +118,6 @@ const TopNav=()=>{
                 </SubMenu>
             </>
             )}
-            
-        
         </Menu>
     );
 };
