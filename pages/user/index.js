@@ -10,7 +10,7 @@ const UserIndex = () => {
 
   return (
     <UserRoute>
-      <h1 className="jumbotron text-center square">User dashboard</h1>
+      <h1 className="jumbotron text-center square">Tablero de usuario</h1>
     </UserRoute>
   );
 };

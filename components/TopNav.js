@@ -42,7 +42,7 @@ const TopNav=()=>{
     
     
     return(
-        <Menu mode="horizontal" selectedKeys={[current]}>
+        <Menu mode="horizontal" selectedKeys={[current]} className="mb-2">
         
             {user && user.role && user.role.includes("Instructor") ? (
                 <Item 
@@ -65,12 +65,7 @@ const TopNav=()=>{
                     </Link>
                 </Item>
             )}
-            
-            
-            
-            
-            
-            
+
             {user=== null && (
             <>
                 <Item 
@@ -106,7 +101,7 @@ const TopNav=()=>{
                     <ItemGroup>
                         <Item key="/user">
                             <Link href="/user" legacyBehavior>
-                                <a>Dashboard</a>
+                                <a>Tablero</a>
                             </Link>
                         </Item>
                         <Item 
@@ -118,6 +113,17 @@ const TopNav=()=>{
                 </SubMenu>
             </>
             )}
+            {user && user.role && user.role.includes("Instructor") && (
+                <Item 
+                key="/instructor"
+                onClick={(e) => setCurrent(e.key)}
+                icon={<TeamOutlined/>}
+                >
+                    <Link href="/instructor" legacyBehavior>
+                        <a>Instructor</a>
+                    </Link>
+                </Item>
+            ) }
         </Menu>
     );
 };

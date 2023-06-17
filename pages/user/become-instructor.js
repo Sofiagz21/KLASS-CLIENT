@@ -27,7 +27,7 @@ const BecomeInstructor =()=>{
         })
         .catch(err =>{
             console.log(err.response.status)
-            toast('Stripe onboarding failed. Try Again.');
+            toast('Algo salió mal. Inténtelo de nuevo');
             setLoading(false);
         })
     };
@@ -41,7 +41,17 @@ const BecomeInstructor =()=>{
                         <div className="pt-4">
                             <UserSwitchOutlined className="display-1 pb-3" />
                             <br/>
-                            <h2> </h2>
+                            <h2>Bienvenido aqui podra crear su cuenta</h2>
+                            <Button 
+                            className="mb-3" 
+                            type="primary" 
+                            block shape="round" 
+                            size="large"
+                            onClick={BecomeInstructor}
+                            disabled={user && user.role && user.role.includes ("Instructor") || loading}
+                            >
+                                {loading ? "Crear cuenta" :"Crear cuenta"}
+                            </Button>
                         </div>                    
                     </div>
                 </div>
