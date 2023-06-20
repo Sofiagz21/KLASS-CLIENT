@@ -1,6 +1,5 @@
 /*PAGINA regiter*/
 import { useState, useContext, useEffect} from "react";
-import Wave from "../components/Wave"; // Wave
 import axios from 'axios'
 import {toast} from 'react-toastify'
 import { SyncOutlined } from '@ant-design/icons';
@@ -25,7 +24,7 @@ const Login =()=>{
     
     // protección de paginas
     useEffect(()=>{
-        if(user!== null) router.push("/courses"); //"/"
+        if(user!== null) router.push("/user"); //"/"
     },[user]);
         
     /* presentación del formulario*/

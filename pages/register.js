@@ -26,7 +26,7 @@ const Register =()=>{
     
     // protección de paginas
     useEffect(() => {
-        if(user !==null) router.push("/courses"); // "//"
+        if(user !==null) router.push("/"); // "//"
     },[user])
     
     /* presentación del formulario*/
