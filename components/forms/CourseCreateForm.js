@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import { Select, Button } from "antd";
+import { Select, Button, Avatar } from "antd";
 import { SaveOutlined } from "@ant-design/icons";
 
 const {Option} = Select;
@@ -10,14 +10,12 @@ const CourseCreateForm = ({
     handleChange, 
     values, 
     setValues,
+    preview,
+    uploadButtonText
 
 }) => {
     
     const children =[];
-    
-    for(let i= 9.99; i <= 99.99; i++ ) {
-        children.push(<Option key={i.toFixed(2)}>${i.toFixed(2)}</Option>)
-    }
 
     return(
         <form onSubmit={handleSubmit} noValidate="true">
@@ -54,21 +52,8 @@ const CourseCreateForm = ({
                         </Select>
                     </div>
                 </div>
-                
-                {values.paid && <div className="col-md-6">
-                    <div className="form-group">
-                        <Select
-                            defaultValue="$9.99"
-                            style={{width: '100%'}}
-                            onChange={v=> setValues({...values, price: v})}
-                            tokenSeparators={[,]}
-                            size="large"
-                        >
-                        {children} 
-                        </Select>         
-                    </div>
-                </div>}
             </div> 
+            
             <div className="form-group">
                 <input
                     type="text"
@@ -83,7 +68,7 @@ const CourseCreateForm = ({
                 <div className="col">
                     <div className="form-group">
                         <label className="btn btn-outline-scondary btn-block text-left">
-                            {values.loading ? 'Cargando': 'Cargando Imagen'}
+                            {uploadButtonText}
                             <input 
                                 type="file" 
                                 name="imagen" 
@@ -94,6 +79,9 @@ const CourseCreateForm = ({
                         </label>
                     </div>
                 </div>
+                {preview && (
+                        <Avatar width={200} src={preview}></Avatar>
+                )}
             </div>
             <div className="row"> 
                 <div className="col">
@@ -111,6 +99,5 @@ const CourseCreateForm = ({
     </form>
     );
 }
-
 
 export default CourseCreateForm

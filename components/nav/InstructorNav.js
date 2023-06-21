@@ -26,3 +26,4 @@ const InstructorNav = () => {
 };
 
 export default InstructorNav;
+
