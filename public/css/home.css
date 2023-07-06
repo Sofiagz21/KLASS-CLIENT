@@ -1,6 +1,5 @@
 /*HOME PAGE*/
 
-
 * {
     margin: 0;
     padding: 0;
@@ -28,7 +27,6 @@
     background-position: center !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
-    position: relative;
     background: url(../images/home/banner_bg3.png);
 }
 
@@ -45,14 +43,12 @@
 }
 }
 
-
 @media (min-width: 576px) and (max-width: 767.99px){
 .tf_banner_text {
     margin-top: 10px;
     margin-bottom: 57px;
 }
 }
-
 
 .tf_banner_text {
     display: flex;
@@ -66,7 +62,6 @@
     animation-duration: 1.5s;
     animation-name: fadeInUp;
 }
-
 
 @media (min-width: 576px) and (max-width: 767.99px){
 .tf_banner_2 .tf_banner_text {

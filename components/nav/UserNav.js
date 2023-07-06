@@ -2,7 +2,7 @@ import {useState, useEffect} from "react";
 import Link from "next/link";
 
 const UserNav = () => {
-  
+
   const [current,setCurrent] =useState('')
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const UserNav = () => {
   return (
     <div className="nav flex-column nav-pills mt-2 ">
       <Link href="/user" legacyBehavior>
-          <a className={`nav-link ${current === "/user" && "active" }`}>
+          <a className={`nav-link ${current === "/user" && "desactive" }`}>
             Dashboard Usuario
           </a>
       </Link>

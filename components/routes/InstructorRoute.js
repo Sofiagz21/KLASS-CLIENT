@@ -5,7 +5,6 @@ import { SyncOutlined } from "@ant-design/icons";
 import InstructorNav from "../nav/InstructorNav";
 
 function InstructorRoute({ children }) {
-
   //state
   const [ok, setOk] = useState(false);
   // router
@@ -18,11 +17,11 @@ function InstructorRoute({ children }) {
     const fetchInstructor = async () => {
       try {
         const { data } = await axios.get("/api/current-instructor");
-        console.log("INSTRUCTOR ROUTE -> ",data);
+        //console.log("INSTRUCTOR ROUTE -> ",data);
         data.ok && setOk(true);
       } catch (error) {
         setOk(false);
-        //router.push("/");
+        router.push("/");
         console.log(error);
       }
     };

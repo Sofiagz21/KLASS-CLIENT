@@ -1,5 +1,4 @@
-import {useState, useEffect} from "react";
-import { Select, Button, Avatar } from "antd";
+import { Select, Button, Avatar, Badge } from "antd";
 import { SaveOutlined } from "@ant-design/icons";
 
 const {Option} = Select;
@@ -11,12 +10,10 @@ const CourseCreateForm = ({
     values, 
     setValues,
     preview,
-    uploadButtonText
-
+    uploadButtonText,
+    handleImageRemove
 }) => {
-    
     const children =[];
-
     return(
         <form onSubmit={handleSubmit} noValidate="true">
             <div className="form-group">
@@ -80,16 +77,21 @@ const CourseCreateForm = ({
                     </div>
                 </div>
                 {preview && (
-                        <Avatar width={200} src={preview}></Avatar>
+                    <Badge count="X" onClick={handleImageRemove} className="pointer">
+                        <Avatar width={200} src={preview}/> 
+                    </Badge>
                 )}
             </div>
             <div className="row"> 
                 <div className="col">
                     <Button 
-                        onclick={handleSubmit}
-                        disabled={values.loading || values.loading}
+                        onClick={handleSubmit}
+                        disabled={values.loading || values.uploading}
                         className="btn btn-primary"
-                        loading="values.loading"
+                        loading={values.loading}
+                        type="primary"
+                        size="large"
+                        shape="round"
                         icon={<SaveOutlined/>}
                         >
                         {values.loading ? 'Guardando...' :"Guardar Y Continuar"}
