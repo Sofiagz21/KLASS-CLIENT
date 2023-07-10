@@ -36,7 +36,7 @@ const AddLessonForm = ({
                     {uploadButtonText}
                     <input onChange={handlePdf} type="file" accept="pdf/*" hidden/>
                 </label>
-                <br/>
+                
                 {!uploading && values.pdf.Location && (
                 <Tooltip title="Remove">
                     <span onClick={handlePdfRemove} className="pt-1 pl-3">
@@ -62,7 +62,6 @@ const AddLessonForm = ({
             > 
                 Guardar 
             </Button>
-
         </form>
     
     
