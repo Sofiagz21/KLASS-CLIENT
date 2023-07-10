@@ -39,117 +39,119 @@ const TopNav = () => {
   };
 
   return (
-    <Menu mode="horizontal" selectedKeys={[current]} >
+    <Menu mode="horizontal" selectedKeys={[current]}>
       <div className="NavbarItems">
         <h1 className="navbar-logo">
-          <Item
-          key="/"
-          onClick={(e) => setCurrent(e.key)}
-          >
+          <Menu.Item key="/" onClick={(e) => setCurrent(e.key)}>
             <Link href="/" legacyBehavior>
               <a className="nav-links"> KLASS</a>
             </Link>
-          </Item>
+          </Menu.Item>
         </h1>
         <ul className="nav-menu">
           {user && user.role && user.role.includes("Instructor") ? (
             <>
               <li>
-                <Item
-                key="/instructor/course/create"
-                onClick={(e) => setCurrent(e.key)}
-                icon={<CarryOutOutlined />}
+                <Menu.Item
+                  key="/instructor/course/create"
+                  onClick={(e) => setCurrent(e.key)}
+                  icon={<CarryOutOutlined />}
                 >
                   <Link href="/instructor/course/create" legacyBehavior>
                     <a className="nav-links"> Crear Curso</a>
                   </Link>
-                </Item>
+                </Menu.Item>
               </li>
             </>
           ) : (
             <>
               <li>
-                <Item
-                key="/user/become-instructor"
-                onClick={(e) => setCurrent(e.key)}
-                icon={<TeamOutlined />}
+                <Menu.Item
+                  key="/user/become-instructor"
+                  onClick={(e) => setCurrent(e.key)}
+                  icon={<TeamOutlined />}
                 >
-                  <Link href="/user/become-instructor" className="nav-links" legacyBehavior>
+                  <Link
+                    href="/user/become-instructor"
+                    className="nav-links"
+                    legacyBehavior
+                  >
                     <a className="nav-links">Quiero ser Instructor</a>
                   </Link>
-                </Item>
+                </Menu.Item>
               </li>
             </>
           )}
           {user === null && (
             <>
               <li>
-                <Item
-                key="/login"
-                onClick={(e) => setCurrent(e.key)}
-                icon={<LoginOutlined />}
+                <Menu.Item
+                  key="/login"
+                  onClick={(e) => setCurrent(e.key)}
+                  icon={<LoginOutlined />}
                 >
-                  <Link href="/login" legacyBehavior >
+                  <Link href="/login" legacyBehavior>
                     <a className="nav-links">Ingresar</a>
                   </Link>
-                </Item>
+                </Menu.Item>
               </li>
               <li>
-                <Item
-                key="/register"
-                onClick={(e) => setCurrent(e.key)}
-                icon={<UserAddOutlined />}
+                <Menu.Item
+                  key="/register"
+                  onClick={(e) => setCurrent(e.key)}
+                  icon={<UserAddOutlined />}
                 >
-                  <Link href="/register"  legacyBehavior>
+                  <Link href="/register" legacyBehavior>
                     <a className="nav-links">Registrarme</a>
-                 </Link>
-                </Item>
+                  </Link>
+                </Menu.Item>
               </li>
             </>
           )}
-          
+
           {user !== null && (
-            <SubMenu
-            icon={<CoffeeOutlined />}
-            title={user && user.name}
-            className="float-right"
+            <Menu.SubMenu
+              icon={<CoffeeOutlined />}
+              title={user && user.name}
+              className="float-right"
             >
-            <ItemGroup>
-              <li>
-                <Item key="/user">
-                  <Link href="/user" legacyBehavior>
-                    <a className="nav-links">Dashboard</a>
-                  </Link>
-                </Item>
-              </li>
-              <li>
-                <Item onClick={logout}>Cerrar Sesión</Item>
-              </li>
-              
-            </ItemGroup>
-            </SubMenu>
+              <Menu.ItemGroup>
+                <li>
+                  <Menu.Item key="/user">
+                    <Link href="/user" legacyBehavior>
+                      <a className="nav-links">Dashboard</a>
+                    </Link>
+                  </Menu.Item>
+                </li>
+                <li>
+                  <Menu.Item onClick={logout}>
+                    Cerrar Sesión
+                  </Menu.Item>
+                </li>
+              </Menu.ItemGroup>
+            </Menu.SubMenu>
           )}
           {user && user.role && user.role.includes("Instructor") && (
             <>
               <li>
-                <Item
-                key="/instructor"
-                onClick={(e) => setCurrent(e.key)}
-                icon={<TeamOutlined />}
-                className="float-right"
+                <Menu.Item
+                  key="/instructor"
+                  onClick={(e) => setCurrent(e.key)}
+                  icon={<TeamOutlined />}
+                  className="float-right"
                 >
-                  <Link href="/instructor"  legacyBehavior >
+                  <Link href="/instructor" legacyBehavior>
                     <a className="nav-links">Instructor</a>
                   </Link>
-                </Item>
+                </Menu.Item>
               </li>
             </>
           )}
         </ul>
         <button className="mobile-menu-icon">
-            {Mobile? <ImCross/> : <FaBars/>}
+          {Mobile ? <ImCross /> : <FaBars />}
         </button>
-      </div>  
+      </div>
     </Menu>
   );
 };
