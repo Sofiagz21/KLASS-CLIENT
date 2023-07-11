@@ -18,7 +18,7 @@ const AddLessonForm = ({
             className="form-control square"
             onChange={(e) => setValues({ ...values, title: e.target.value })}
             values={values.title}
-            placeholder="Title"
+            placeholder="Titulo"
             autoFocus
             required
             />
@@ -26,7 +26,7 @@ const AddLessonForm = ({
                 className={"form-control mt-3"}
                 cols="7"
                 rows="7"
-                onChange={(e) => setValues(e.target.value)}
+                onChange={(e) => setValues({ ...values, content: e.target.value })}
                 values={values.content}
                 placeholder="Contenido"
             ></textarea>
@@ -45,7 +45,6 @@ const AddLessonForm = ({
                 </Tooltip>
                 )}
             </div>
-            
             {progress > 0 && (
             <Progress
                 className="d-flex justify-content-center pt-2"
@@ -53,7 +52,6 @@ const AddLessonForm = ({
                 steps={10}
             />
             )}
-
             <Button 
                 onClick={handleAddLesson} 
                 className="col mt-3" 
@@ -64,8 +62,6 @@ const AddLessonForm = ({
             > 
                 Guardar 
             </Button>
-            
-            
         </form>
     
     

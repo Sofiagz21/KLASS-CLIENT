@@ -50,7 +50,6 @@ const CourseCreateForm = ({
                     </div>
                 </div>
             </div> 
-            
             <div className="form-group">
                 <input
                     type="text"
