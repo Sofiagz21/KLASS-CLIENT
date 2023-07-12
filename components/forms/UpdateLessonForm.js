@@ -1,47 +1,45 @@
 import { Button, Progress, Tooltip } from "antd";
+import ReactPlayer from "react-player";
+
 import { CloseCircleFilled, CloseCircleOutlined } from "@ant-design/icons";
 
-const AddLessonForm = ({ 
-    values,
-    setValues,
-    handleAddLesson,
+const UpdateLessonForm = ({ 
+    current,
+    setCurrent,
+    handleUpdateLesson,
     uploading,
-    uploadButtonText,
+    uploadPdfButtonText,
     handlePdf,
     progress,
-    handlePdfRemove
 }) =>{
     return <div className="container pt-3"> 
-        <form onSubmit={handleAddLesson}>
+        <form onSubmit={handleUpdateLesson}>
             <input
             type="text"
             className="form-control square"
-            onChange={(e) => setValues({ ...values, title: e.target.value })}
-            values={values.title}
-            placeholder="Titulo"
+            onChange={(e) => setValues({ ...current, title: e.target.value })}
+            value={current.title}
             required
             />
             <textarea
                 className={"form-control mt-3"}
                 cols="7"
                 rows="7"
-                onChange={(e) => setValues({ ...values, content: e.target.value })}
-                values={values.content}
+                onChange={(e) => setValues({ ...current, content: e.target.value })}
+                value={current.content}
                 placeholder="Contenido"
             ></textarea>
             
             <div className="d-flex justify-content-center">
                 <label className="btn btn-dark btn-block text-left mt-3">
-                    {uploadButtonText}
+                    {uploadPdfButtonText}
                     <input onChange={handlePdf} type="file" accept="pdf/*" hidden/>
                 </label>
                 
-                {!uploading && values.pdf.Location && (
-                <Tooltip title="Eliminar">
-                    <span onClick={handlePdfRemove} className="pt-1 pl-3">
-                        <CloseCircleFilled className="text-danger d-flex justify-content-center pt-4 pointer" />
-                    </span>
-                </Tooltip>
+                {!uploading && current.pdf &&current.pdf.Location && (
+                    <div className="pt-2 d-flex justify-content-center"> 
+                    Mostrar
+                    </div>
                 )}
             </div>
             {progress > 0 && (
@@ -51,8 +49,11 @@ const AddLessonForm = ({
                 steps={10}
             />
             )}
+            <div className="d-flex justify-content-between">
+                <span className="pt-2 badge">Previsualizar</span>
+            </div>
             <Button 
-                onClick={handleAddLesson} 
+                onClick={handleUpdateLesson} 
                 className="col mt-3" 
                 size="large" 
                 type="primary" 
@@ -68,4 +69,4 @@ const AddLessonForm = ({
 };
 
 
-export default AddLessonForm;
+export default UpdateLessonForm;

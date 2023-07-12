@@ -11,9 +11,13 @@ const CourseCreateForm = ({
     setValues,
     preview,
     uploadButtonText,
-    handleImageRemove
+    handleImageRemove = (f) => f, 
+    editPage = false,
 }) => {
     const children =[];
+    for (let i=9.99; i<=100.99 ; i++){
+        children.push (<Option key={i.toFixed(2)}>${i.toFixed(2)}</Option>)
+    }
     return(
         <form onSubmit={handleSubmit} noValidate="true">
             <div className="form-group">
@@ -79,6 +83,12 @@ const CourseCreateForm = ({
                     <Badge count="X" onClick={handleImageRemove} className="pointer">
                         <Avatar width={200} src={preview}/> 
                     </Badge>
+                )}
+                
+                {editPage ? 'true':'false'}
+
+                {editPage && values.image && (
+                <Avatar width={200} src={values.image.Location}/>
                 )}
             </div>
             <div className="row"> 
